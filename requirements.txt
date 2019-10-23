@@ -1,0 +1,7 @@
+Flask
+coverage
+Flask-Testing
+pylint
+xmlrunner
+autopep8
+gunicorn

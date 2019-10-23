@@ -1,0 +1,1 @@
+web: gunicorn weird-text.manage:app
