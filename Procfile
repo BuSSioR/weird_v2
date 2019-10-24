@@ -1,1 +1,1 @@
-web: gunicorn weird-text.manage:app
+web: gunicorn manage:app
