@@ -1,6 +1,7 @@
 from flask import current_app
 from flask_testing import TestCase
 from project import create_app
+import os
 
 app = create_app()
 
@@ -12,7 +13,7 @@ class TestDevelopmentConfig(TestCase):
 
     def test_app_is_development(self):
         self.assertTrue(app.config['SECRET_KEY'] ==
-                        'c873eeb1326e6bf2c2d066acc771347e')
+                        os.getenv('SECRET_KEY'))
         self.assertFalse(current_app is None)
 
 
@@ -23,6 +24,6 @@ class TestTestConfig(TestCase):
 
     def test_app_is_testing(self):
         self.assertTrue(app.config['SECRET_KEY'] ==
-                        'c873eeb1326e6bf2c2d066acc771347e')
+                        os.getenv('SECRET_KEY'))
         self.assertTrue(app.config['TESTING'])
         self.assertFalse(app.config['PRESERVE_CONTEXT_ON_EXCEPTION'])
