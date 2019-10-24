@@ -19,7 +19,7 @@ def create_app(script_info=None):
     app.register_blueprint(encoder_blueprint)
     # set up logging
     if app.config['ENV'] == 'production':
-        gunicorn_logger = logging.getLogger('gunicorn.error')
+        gunicorn_logger = logging.getLogger('gunicorn.warning')
         app.logger.handlers = gunicorn_logger.handlers
         app.logger.setLevel(gunicorn_logger.level)
 
