@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run: pip3 install -r requirements.txt --user
       - run: autopep8 --in-place --aggressive --recursive .
-      - run: cd weird-text && python3 manage.py test
+      - run: python3 manage.py test
       - run:
           name: Deploy Master to Heroku
           command: |
