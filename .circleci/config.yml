@@ -3,12 +3,12 @@ jobs:
   build:
     docker:
       - image: circleci/python:3.7
-    working_directory: /weird-text
+    working_directory: ~/weird-text
     steps:
       - checkout
       - run: pip3 install -r requirements.txt --user
       - run: autopep8 --in-place --aggressive --recursive .
-      - run: python3 manage.py test
+      - run: cd weird-text && python3 manage.py test
       - run:
           name: Deploy Master to Heroku
           command: |
