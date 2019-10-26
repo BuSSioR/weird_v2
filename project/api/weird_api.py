@@ -5,7 +5,6 @@ from project.handlers.handlers import check_json,check_lenght,check_list
 import re
 encoder_blueprint = Blueprint('encoder', __name__)
 
-
 @encoder_blueprint.route('/v1/encode', methods=['POST'])
 def encode():
     '''Returns encoded sentence, validates request payload.'''
@@ -45,6 +44,7 @@ def decode_without_list():
 @encoder_blueprint.route('/v1/decode', methods=['POST'])
 def decode():
     '''Returns decoded sentence based on words list.'''
+    current_app.logger.warning(request.json)
     missing = check_json(['sentence', 'decode_list'], request.json)
     if missing:
         raise PayloadException(

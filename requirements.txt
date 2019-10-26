@@ -5,3 +5,4 @@ pylint
 xmlrunner
 autopep8
 gunicorn
+flask_cors
