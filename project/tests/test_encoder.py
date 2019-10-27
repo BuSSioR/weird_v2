@@ -1,5 +1,5 @@
 import unittest
-from project.services.weird_words import WeirdText
+from project.services.weird_words_service import WeirdText
 
 
 class TestWeirdEncoder(unittest.TestCase):

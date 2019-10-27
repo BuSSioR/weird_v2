@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, request, current_app
-from project.services.weird_words import WeirdText
+from project.services.weird_words_service import WeirdText
 from project.api.errors import PayloadException
 from project.handlers.handlers import check_json,check_lenght,check_list
 import re
